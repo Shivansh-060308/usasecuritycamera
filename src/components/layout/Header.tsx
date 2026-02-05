@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <Shield className="h-8 w-8 text-primary" />
+            <img src={logo} alt="USA Security Cameras" className="h-8 w-8" />
             <span className="font-display font-bold text-xl">
               USA Security<span className="text-primary">Cameras</span>
             </span>
@@ -32,12 +33,15 @@ const Header = () => {
             <a href="/#installation" className="text-muted-foreground hover:text-foreground transition-colors">
               Installation
             </a>
+            <a href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              Contact
+            </a>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="default" size="sm">
-              Get Free Quote
+            <Button variant="default" size="sm" asChild>
+              <a href="#contact">Get Free Quote</a>
             </Button>
           </div>
 
@@ -82,8 +86,15 @@ const Header = () => {
               >
                 Installation
               </a>
-              <Button variant="default" size="sm" className="w-fit">
-                Get Free Quote
+              <a
+                href="/#contact"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+              <Button variant="default" size="sm" className="w-fit" asChild>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Get Free Quote</a>
               </Button>
             </nav>
           </div>
