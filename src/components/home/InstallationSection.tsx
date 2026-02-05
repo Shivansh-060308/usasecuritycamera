@@ -38,8 +38,8 @@ const InstallationSection = () => {
               ))}
             </div>
             
-            <Button variant="hero">
-              Schedule Free Installation
+            <Button variant="hero" asChild>
+              <a href="#contact">Schedule Free Installation</a>
             </Button>
           </div>
           

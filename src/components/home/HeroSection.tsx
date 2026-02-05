@@ -30,12 +30,14 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button variant="hero">
-                Get Free Installation
+              <Button variant="hero" asChild>
+                <a href="#installation">Get Free Installation</a>
               </Button>
-              <Button variant="heroOutline">
-                <Play className="h-5 w-5" />
-                Watch Demo
+              <Button variant="heroOutline" asChild>
+                <a href="#cameras">
+                  <Play className="h-5 w-5" />
+                  Explore Cameras
+                </a>
               </Button>
             </div>
             
